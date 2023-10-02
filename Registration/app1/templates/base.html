@@ -1,0 +1,255 @@
+ {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{% static 'dashboard/style.css' %}">
+     <link rel="stylesheet" href="{% static 'dashboard/chatbot.css' %}">
+      <script src="{% static 'dashboard/chatbot.js' %}" type="text/javascript"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ElevateXSports</title>
+
+
+</head>
+<body id="body-pd">
+
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="search">
+            <span class="searchIcons" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </span>
+            <input id="searchInput" type="text" placeholder="Search" />
+        </div>
+        <span class="searchIcons" id="info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                </svg>
+            </span>
+        <span id="bellIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                </svg>
+            </span>
+      <span id="name" style="color: gray; font-size: 20px; font-weight: bold;">
+    {% if request.user.is_authenticated %}
+        Welcome Back: {{ request.user.username }} ({{ request.user.email }})
+    {% else %}
+        User is not logged in
+    {% endif %}
+</span>
+
+        <span id="markdown">
+            <svg style="margin-right: 1rem" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </span>
+        <div class="header_img">
+    {% if user.userimage.profile_image %}
+        <img src="{{ user.userimage.profile_image.url }}" alt="Profile Image">
+    {% else %}
+        <img src="{% static 'default_profile.jpg' %}" alt="Default Profile Image">
+    {% endif %}
+</div>
+
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">ElevateXSports</span> </a>
+                <div class="nav_list">
+                    <a href="#" id="Exercise" class="nav_link active"><i class='bx bx-home nav_icon'></i> <span class="nav_name">Exercises</span></a>
+                    <a href="#" id="Progress" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Progress</span> </a>
+
+                    <a href="#" id="chat" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Chats     <span style=" color: white;background-color: orange ; padding: 0 0.5rem ; border-radius: 0.5rem">2</span></span></a>
+                    <a href="#" id="calc" class="nav_link"> <i class='bx bx-calendar nav_icon'></i> <span class="nav_name">Calculate health</span> </a>
+                </div>
+            </div>
+            <div style="display: flex ; flex-direction: column ; justify-content: center ">
+                <a href="#" class="nav_link" id="set"> <i class='bx bx-cog nav_icon'></i> <span  class="nav_name">Settings</span> </a> <br>
+                <a href="{% url 'logout' %}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">LogOut</span> </a>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div id="exe">
+
+        <h4>Exercise</h4>
+     <div class="container">
+
+
+         <div class="Ebox">
+    <div class="first">
+        <div class="video-container">
+            <video id="exerciseVideo" src=" " loop muted></video>
+            <div class="custom-progress-bar"></div>
+        </div>
+    </div>
+    <div class="aside">
+        <ul class="menu">
+            {% block content %}
+        {% endblock %}
+        </ul>
+    </div>
+
+<div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster" id="loader">
+	<div class="wheel"></div>
+	<div class="hamster">
+		<div class="hamster__body">
+			<div class="hamster__head">
+				<div class="hamster__ear"></div>
+				<div class="hamster__eye"></div>
+				<div class="hamster__nose"></div>
+			</div>
+			<div class="hamster__limb hamster__limb--fr"></div>
+			<div class="hamster__limb hamster__limb--fl"></div>
+			<div class="hamster__limb hamster__limb--br"></div>
+			<div class="hamster__limb hamster__limb--bl"></div>
+			<div class="hamster__tail"></div>
+		</div>
+	</div>
+	<div class="spoke"></div>
+</div>
+
+                <div id="details">
+                    <h3>Welcome</h3>
+                    <p>Best of luck with your exercises! 🏋️‍♂️ <br> <br>
+Simply click on the exercise name to mark it as completed. Once marked, you can follow the instructions below to perform the exercise effectively.</p>
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+         <div id="pro" style="display: none;">
+        <h4>Progress</h4>
+         <h3>Total Calories Burned: {{ user_videos.total_calories_burned }}</h3>
+
+  <h1 style="color:white">Progress report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>Pull Ups</th>
+                <th>Lunges</th>
+                <th>Leg Raises</th>
+                <th>Alternating Superman</th>
+                <th>FORWARD SPINE STRETCH PULSE</th>
+                <th>jumping-jacks</th>
+                <th>incline-pushups</th>
+                <th>knee-pushups</th>
+                <th>cobra-stretch</th>
+                <th>Ankle Plantar Flexion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>{{ user_videos.user.username }}</td>
+                <td>{{ user_videos.video_1|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_2|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_3|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_4|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_5|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_6|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_7|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_8|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_9|yesno:"completed,not completed" }}</td>
+                <td>{{ user_videos.video_10|yesno:"completed,not completed" }}</td>
+            </tr>
+        </tbody>
+    </table>
+         <h1 style="color: white;">User Data</h1>
+{% if user_data %}
+    <div style="background-color: inherit; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+        <div style="font-weight: bold; font-size: 20px; text-align:center;">User: {{ user_data.user.username }}</div>
+        <div style="font-weight: bold; font-size: 20px; text-align:center;">Height: {{ user_data.height }} cm</div>
+        <div style="font-weight: bold; font-size: 20px; text-align:center;">Weight: {{ user_data.weight }} kg</div>
+        <div style="font-weight: bold; font-size: 20px; text-align:center;">Sport Choice: {{ user_data.sport_choice }}</div>
+        <!-- You can add more fields as needed -->
+        {% if user_data.image %}
+            <img src="{{ user_data.image.url }}" alt="User Image" style="max-width: 100%; height: 50px; margin-top: 10px;">
+        {% endif %}
+    </div>
+{% else %}
+    <p>No user data available.</p>
+{% endif %}
+
+         </div>
+
+    <div id="chats" style="display: none;">
+        <h4>Chats</h4>
+<div class="chatbot">
+  <header>
+    <h2>ElevateXsports</h2>
+  </header>
+  <ul class="chatbox">
+    <!-- Example chat messages -->
+    <li class="chat incoming">
+      <span class="material-symbols-outlined"><i class="fa-solid fa-robot" style="color: #2066df;"></i></span>
+      <p>Hello👋 welcome to ElevateXsports. How can I assist you today?</p>
+    </li>
+    <li class="chat outgoing">
+
+    </li>
+  </ul>
+  <div class="chat-input">
+    <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+    <span id="send-btn" class="material-symbols-rounded">send</span>
+  </div>
+</div>
+
+    </div>
+
+     <div id="calculate" style="display: none;">
+        <h4>Calculate Health</h4>
+        <h3><b>B</b>ody <b>M</b>ass <b>I</b>ndex Calculator</h3>
+        <form class="form" id="form"  action="" onsubmit="return validateForm()">
+             {% csrf_token %}
+            <div class="row-one">
+                <input type="text" class="text-input" id="age" name="age" autocomplete="off" required />
+                <p class="text">Age</p>
+            <label class="contain">
+    <input type="radio" name="gender"  id="f" />
+    Female
+    <span class="checkmark"></span>
+</label>
+<label class="contain">
+    <input type="radio" name="gender" id="m" />
+    Male
+    <span class="checkmark"></span>
+</label>
+
+            </div>
+
+            <div class="row-two">
+                <input type="text" class="text-input" id="height" autocomplete="off" name="height" required />
+                <p class="text">Height (cm)</p>
+                <input type="text" class="text-input" id="weight" autocomplete="off" name="weight" required />
+                <p class="text">Weight (kg)</p>
+            </div>
+            <button type="button" id="submit">Submit</button>
+        </form>
+        <h1 id="bmi"></h1>
+        <h2 id="bmi1"></h2>
+    </div>
+
+      <div id="settings" style="display: none; text-align: center; margin-top: 20px;">
+    <a href="{% url 'change_password' %}" style="display: block; background-color: #007BFF; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; margin-bottom: 10px;">Change Password</a>
+    <a href="{% url 'upload' %}" style="display: block; background-color: #28a745; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Upload Image</a>
+</div>
+
+    </main>
+
+   <script src="{% static 'dashboard/script.js' %}" type="text/javascript"></script>
+
+</body>
+</html>

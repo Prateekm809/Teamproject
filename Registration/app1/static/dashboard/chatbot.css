@@ -1,0 +1,100 @@
+/* Center the chatbot and add colors to chat messages */
+.chatbot {
+  width: 400px; /* Increase the width as needed */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Increase the border radius for rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increase the box shadow */
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #007bff; /* Header background color */
+  color: #fff; /* Header text color */
+  padding: 15px; /* Increase the padding */
+  text-align: center;
+}
+
+.chatbox {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto; /* Allow chat messages to scroll vertically */
+  max-height: 300px; /* Set a maximum height for the chat messages */
+}
+
+.chatbox li {
+  padding: 15px; /* Increase the padding */
+  display: flex;
+  align-items: flex-start;
+}
+
+.chatbox .material-symbols-outlined {
+  margin-right: 15px; /* Increase the margin */
+  font-size: 24px; /* Increase the font size */
+}
+
+.chatbox .incoming {
+  justify-content: flex-start;
+}
+
+.chatbox .incoming p {
+  background-color: #f2f2f2; /* Background color for incoming messages */
+  padding: 12px; /* Increase the padding */
+  border-radius: 12px; /* Increase the border radius */
+  font-size: 16px; /* Increase the font size */
+}
+
+.chatbox .outgoing {
+  justify-content: flex-end;
+}
+
+.chatbox .outgoing p {
+  background-color: #007bff; /* Background color for outgoing messages */
+  color: #fff; /* Text color for outgoing messages */
+  padding: 12px; /* Increase the padding */
+  border-radius: 12px; /* Increase the border radius */
+  font-size: 16px; /* Increase the font size */
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 15px; /* Increase the padding */
+}
+
+.chat-input textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 10px; /* Increase the border radius */
+  font-size: 16px; /* Increase the font size */
+  flex-grow: 1;
+  background-color: transparent;
+  height: 30px; /* Set the desired height for the textarea */
+  min-height: 30px; /* Ensure a minimum height for the textarea */
+}
+
+#send-btn {
+  cursor: pointer;
+  font-size: 24px; /* Increase the font size */
+  margin-left: 15px; /* Increase the margin */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 10px 20px; /* Increase padding for a larger clickable area */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover transition */
+}
+
+#send-btn:hover {
+  background-color: #0056b3; /* Button background color on hover */
+  color: #fff; /* Button text color on hover */
+}

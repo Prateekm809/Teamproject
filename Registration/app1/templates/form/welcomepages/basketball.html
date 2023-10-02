@@ -1,0 +1,107 @@
+    {% extends 'form/welcomepages/base1.html' %}
+
+{% block content %}
+ {% load static %}
+
+         <video autoplay muted loop src="{% static 'files/basket.mp4' %}"></video>
+        </div>
+        <div class="page2">
+           <h1>Meaning of "Basketball"</h1>
+        <div class="page2-container">
+            <div class="page2-left">
+                <h2>The word "Basketball" can be understood as follows:<br>
+                    1. "Basket" signifies the primary objective of the game, which is to score points by throwing or shooting a ball through the opponent's basket or hoop.<br>
+                    2. "Ball" represents the spherical object used in the game, which players dribble, pass, and shoot to achieve their goals.<br>
+                </h2>
+                </div>
+                <div class="page2-right">
+                     <p>From a legendary Basketball player </p>
+                    <div class="parent">
+  <div class="card">
+      <div class="content-box">
+         <span class="card-title">— LeBron James</span>
+          <p class="card-content">
+              “You can't be afraid to fail. It's the only way you succeed. You're not gonna succeed all the time and I know that.”
+          </p>
+          <span class="see-more" id="see1">See More</span>
+      </div>
+      <div class="date-box1" style="background-image: url('{% static 'files/lebron.jpg' %}');">
+
+      </div>
+  </div>
+</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page3">
+           <h1>Five Principles of Basketball:</h1>
+        <h2>
+            1. Teamwork:<br>
+            <strong>Definition:</strong> Teamwork in basketball involves collaborative effort, cooperation, and communication among players to achieve common goals.<br>
+            <strong>Practical Application:</strong> Basketball teams rely on effective teamwork to pass the ball, set screens, and execute plays. It emphasizes the importance of working together and supporting teammates.
+        </h2>
+        <br>
+        <h2>
+            2. Sportsmanship:<br>
+            <strong>Definition:</strong> Sportsmanship means displaying fair play, respect for opponents, and ethical behavior on and off the court.<br>
+            <strong>Practical Application:</strong> Basketball promotes good sportsmanship by encouraging players to shake hands with opponents, accept referees' decisions, and compete with integrity.
+        </h2>
+        <br>
+        <h2>
+            3. Skill Development:<br>
+            <strong>Definition:</strong> Skill development in basketball focuses on honing individual and team skills such as shooting, dribbling, passing, and defense.<br>
+            <strong>Practical Application:</strong> Basketball players continuously work on improving their skills through practice and training sessions.
+        </h2>
+        <br>
+        <h2>
+            4. Strategy and Tactics:<br>
+            <strong>Definition:</strong> Strategy and tactics involve planning and executing plays, formations, and game strategies to outmaneuver opponents.<br>
+            <strong>Practical Application:</strong> Basketball teams devise offensive and defensive strategies to maximize their chances of winning.
+        </h2>
+        <br>
+        <h2>
+            5. Competition and Excellence:<br>
+            <strong>Definition:</strong> Competition and excellence in basketball represent the pursuit of excellence, striving for victory, and pushing one's limits.<br>
+            <strong>Practical Application:</strong> Basketball players aim for excellence by pushing their boundaries, improving skills, and giving their best effort in games and practices.
+        </h2>
+        </div>
+          <div class="page4">
+            <div class="elem">
+                <img src="{% static 'files/bbbeg1.jpg' %}"
+                    alt="">
+                <div class="text-div">
+                    <h1>Beginner</h1>
+                    <h1>Beginner</h1>
+                </div>
+                <img src="{% static 'files/bbbeg2.jpg' %}"
+                    alt="">
+            </div>
+            <div class="elem">
+                <img src="{% static 'files/bbin1.jpg' %}"
+                    alt="">
+                <div class="text-div">
+                    <h1>Intermediate</h1>
+                    <h1>Intermediate</h1>
+                </div>
+                <img src="{% static 'files/bbin2.jpg' %}"
+                    alt="">
+            </div>
+            <div class="elem">
+                <img src="{% static 'files/bbadv.png' %}"
+                    alt="">
+                <div class="text-div">
+                    <h1>Advance</h1>
+                    <h1>Advance</h1>
+                </div>
+                <img src="{% static 'files/bbadv2.png' %}"
+                    alt="">
+            </div>
+
+        </div>
+    <script>
+  document.getElementById("see1").addEventListener("click", function () {
+    window.location.href = "https://en.wikipedia.org/wiki/LeBron_James";
+  });
+    </script>
+    {% endblock %}

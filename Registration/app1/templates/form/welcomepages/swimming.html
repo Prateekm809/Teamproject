@@ -1,0 +1,107 @@
+    {% extends 'form/welcomepages/base1.html' %}
+
+{% block content %}
+ {% load static %}
+
+         <video autoplay muted loop src="{% static 'files/swim2.mp4' %}"></video>
+        </div>
+        <div class="page2">
+              <h1>Meaning of "Swimming"</h1>
+        <div class="page2-container">
+            <div class="page2-left">
+               <h2>The word "Swimming" can be understood as follows:<br>
+                1. "Swim" refers to the activity of propelling oneself through water by using the limbs, typically the arms and legs.<br>
+                2. "Swimming" as a sport involves various styles and techniques for competitive purposes, such as freestyle, breaststroke, backstroke, and butterfly.<br>
+            </h2>
+                </div>
+                <div class="page2-right">
+                 <p>From a legendary Swimmer</p>
+                    <div class="parent">
+  <div class="card">
+      <div class="content-box">
+          <span class="card-title">— Michael Phelps</span>
+          <p class="card-content">
+                    “You can't put a limit on anything. The more you dream, the farther you get.”
+                </p>
+          <span class="see-more" id="see1">See More</span>
+      </div>
+      <div class="date-box1" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Michael_Phelps_Rio_Olympics_2016.jpg/330px-Michael_Phelps_Rio_Olympics_2016.jpg');">
+
+      </div>
+  </div>
+</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page3">
+        <h1>Five Principles of Swimming:</h1>
+    <h2>
+        1. Technique:<br>
+        <strong>Definition:</strong> Technique in swimming involves mastering the various strokes and movements to efficiently move through the water.<br>
+        <strong>Practical Application:</strong> Swimmers focus on refining their stroke technique, body position, and breathing to swim with maximum efficiency.
+    </h2>
+    <br>
+    <h2>
+        2. Endurance:<br>
+        <strong>Definition:</strong> Endurance is the ability to sustain swimming over long distances or for extended periods without tiring quickly.<br>
+        <strong>Practical Application:</strong> Swimmers build endurance through regular training, gradually increasing distances and durations.
+    </h2>
+    <br>
+    <h2>
+        3. Breathing:<br>
+        <strong>Definition:</strong> Proper breathing techniques are essential in swimming to ensure a steady oxygen supply and prevent fatigue.<br>
+        <strong>Practical Application:</strong> Swimmers practice rhythmic breathing patterns and bilateral breathing to improve their performance.
+    </h2>
+    <br>
+    <h2>
+        4. Speed and Pace:<br>
+        <strong>Definition:</strong> Speed and pace involve swimming at different intensities, from sprinting to maintaining a steady rhythm.<br>
+        <strong>Practical Application:</strong> Swimmers learn to adjust their speed and pace based on race strategy and training goals.
+    </h2>
+    <br>
+    <h2>
+        5. Mental Focus:<br>
+        <strong>Definition:</strong> Mental focus in swimming is the ability to stay focused on technique and performance, even under pressure.<br>
+        <strong>Practical Application:</strong> Swimmers practice mental techniques to stay calm, confident, and focused during races and training sessions.
+    </h2>
+        </div>
+         <div class="page4">
+            <div class="elem">
+                <img src="{% static 'files/beggg.jpg' %}"
+                    alt="">
+                <div class="text-div">
+                    <h1>Beginner</h1>
+                    <h1>Beginner</h1>
+                </div>
+                <img src="{% static 'files/bg2.jpg' %}"
+                    alt="">
+            </div>
+            <div class="elem">
+                <img src="{% static 'files/int11.jpg' %}"
+                    alt="">
+                <div class="text-div">
+                    <h1>Intermediate</h1>
+                    <h1>Intermediate</h1>
+                </div>
+                <img src="{% static 'files/int2.jpg' %}"
+                    alt="">
+            </div>
+            <div class="elem">
+                <img src="{% static 'files/advv.jpg' %}"
+                    alt="">
+                <div class="text-div">
+                    <h1>Advance</h1>
+                    <h1>Advance</h1>
+                </div>
+                <img src="{% static 'files/adv22.jpg' %}"
+                    alt="">
+            </div>
+
+        </div>
+    <script>
+  document.getElementById("see1").addEventListener("click", function () {
+    window.location.href = "https://en.wikipedia.org/wiki/LeBron_James";
+  });
+    </script>
+    {% endblock %}

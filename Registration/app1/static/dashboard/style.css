@@ -1,0 +1,962 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: white;
+    z-index: var(--z-fixed);
+    transition: .5s
+}
+
+.header_toggle {
+    color: gray;
+    font-size: 1.5rem;
+    cursor: pointer
+}
+
+.search{
+    width: 90%;
+    padding: 1rem;
+}
+
+#searchInput{
+    width: 75%;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    padding:1rem 0.5rem;
+    background-color: white;
+}
+
+.searchIcons{
+    color: gray;
+    margin-right: -0.2rem;
+    background-color: white;
+}
+
+#bellIcon{
+    margin-left: 1rem;
+}
+
+#name{
+    font-size: 0.8rem;
+    margin-left: 2.5rem;
+    margin-right: 0.5rem;
+    color:red;
+}
+
+.bi-chevron-down{
+    width: 0.6rem;
+}
+
+
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.header_img img {
+    width: 40px
+}
+
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: white;
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed);
+    border-right: 1px solid #dedede;
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem
+}
+
+.nav_logo {
+    margin-bottom: 2rem;
+}
+
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: gray;
+}
+
+.nav_logo-name {
+    color: black;
+    font-weight: 700
+}
+
+.nav_link {
+    position: relative;
+    color: gray;
+    margin-bottom: 1.5rem;
+    transition: .3s
+}
+
+.nav_link:hover {
+    color: gray;
+}
+
+.nav_icon {
+    font-size: 1.25rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem)
+}
+
+.active {
+    color: gray;
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color:white;
+}
+
+main{
+    margin-top: 5.75rem !important;
+}
+
+.containerr{
+    margin:2rem 0 0 0;
+    padding: 0;
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-between;
+    flex-wrap: wrap;
+     height: 100vh;
+}
+
+.containerr>div{
+    width: 21rem;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    min-height: 70vh;
+    margin: 0 1rem 2rem 0;
+}
+
+
+@media (max-width: 1241px) {
+    #searchInput{
+        width: 45%;
+    }
+}
+
+@media (max-width: 944px) {
+    .container{
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 2rem)
+    }
+
+    .header {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+    }
+
+    .header_img {
+        width: 40px;
+        height: 40px
+    }
+
+    .header_img img {
+        width: 45px
+    }
+
+    .l-navbar {
+        left: 0;
+        padding: 1rem 1rem 0 0
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 156px)
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 188px)
+    }
+
+}
+
+@media (max-width: 768px){
+    #name , #markdown{
+        display: none;
+    }
+    #bellIcon{
+        margin-right: 1rem;
+    }
+}
+
+@media(max-width: 700px) {
+    .container>div{
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 380px) {
+    input::placeholder{
+        color: white;
+    }
+}
+/* Enhanced CSS with Rounded Corners and Animations */
+.Ebox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Ebox .first {
+    height: 300px;
+    width: 500px;
+    margin-right: 100px;
+    border-radius: 20px; /* Add rounded corners */
+    transition: transform 0.3s ease-in-out; /* Add a hover animation */
+
+    /* Border properties */
+    border: 2px solid #3498db; /* Replace #3498db with your desired border color */
+}
+
+
+
+/* Style the video container with rounded corners */
+.video-container {
+    position: relative;
+   height: 300px;
+    width: 500px;
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+/* Style the video element with rounded corners */
+#exerciseVideo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Add rounded corners */
+}
+
+/* Style the custom progress bar with animations */
+.custom-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: black;
+    border-radius: 5px; /* Add rounded corners */
+    transition: width 0.3s ease-in-out; /* Add animation to the progress bar */
+}
+.form {
+    background-color: #fff;
+    height: 240px;
+    width: 450px;
+    border-radius: 20px;
+    margin: 20px auto 20px auto;
+    display: block;
+    border: solid 1px #289df6;
+    box-shadow: 0 0 40px 0 #ddd;
+}
+.form:hover {
+    box-shadow: 0 0 60px 0 #ccc;
+    transition: 0.4s;
+    transform: scale(1.02);
+}
+.row-one {
+    padding: 20px;
+}
+.row-two {
+    padding: 20px;
+}
+.text-input {
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #dbeffe;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.text-input:last-child {
+    margin-bottom: 35px;
+}
+.text-input:hover {
+    background-color: #cbe7fd;
+}
+#submit {
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: #289df6;
+    color: #fff;
+    margin: auto;
+    display: block;
+    outline: none;
+    cursor: pointer;
+}
+#submit:hover {
+    background-color: #0a8ef2;
+}
+.text {
+    display: inline-block;
+    margin: 5px 20px 5px 8px;
+}
+.row-one {
+    padding: 30px 20px 15px 20px;
+}
+.row-two {
+    padding: 15px 20px 30px 20px;
+}
+/* Style the custom checkbox with rounded corners */
+.contain {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.contain input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #dbeffe;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out; /* Add hover effect */
+}
+
+.contain:hover input ~ .checkmark {
+    background-color: #cbe7fd;
+}
+
+.contain input:checked ~ .checkmark {
+    background-color: #289df6;
+}
+
+/* Additional styling for headings */
+h1 {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    color: #289df6;
+    padding-top: 15px;
+    display: block;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    padding: 15px;
+}
+
+h3 b {
+    font-size: 32px;
+    font-weight: 300;
+    color: #289df6;
+}
+
+/* Style for checkbox checkmark icon */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.contain input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.contain .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Common styles for active links with animation */
+.active-link {
+    font-weight: bold;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Add animation */
+}
+
+/* Common styles for active nav links with animation */
+.nav_link.active {
+    color: black;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Add animation */
+}
+
+/* Styles for the aside with animation */
+.aside {
+    width: 400px;
+
+    border-right: 1px solid #333;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease; /* Add animation */
+}
+.aside {
+    width: 400px;
+
+    border-right: 1px solid #333;
+    max-height: 75vh; /* Limit the height to 100% of the viewport */
+    overflow-y: auto; /* Add vertical scrollbar if content overflows */
+
+    border-radius: 10px;
+    transition: all 0.3s ease; /* Add animation */
+}
+/* Style the scrollbar for the .aside element */
+.aside::-webkit-scrollbar {
+    width: 6px; /* Set the width of the scrollbar */
+}
+
+.aside::-webkit-scrollbar-thumb {
+    background-color: #4CAF50; /* Color of the thumb (the draggable part) */
+    border-radius: 3px; /* Rounded corners for the thumb */
+}
+
+.aside::-webkit-scrollbar-thumb:hover {
+    background-color: #45a049; /* Color of the thumb on hover */
+}
+
+.aside::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the track (the non-draggable part) */
+    border-radius: 3px; /* Rounded corners for the track */
+}
+
+/* Style the scrollbar for the .aside element on Firefox */
+.aside {
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #f1f1f1;
+}
+
+
+/* Style the menu with animation */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style each menu item (list item) with animation */
+.menu li {
+    border-bottom: 1px solid #333;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Add animation */
+}
+
+/* Style the links within the menu items with animation */
+.menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add animations */
+}
+
+/* Style the links when hovered with animation */
+.menu li a:hover {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+
+}
+.menu li a.active {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    transform: scale(1.05); /* Add scaling animation on hover */
+}
+button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+/* Styles for the Progress section */
+#pro {
+    display: none;
+    padding: 20px;
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White text color */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    width: 90%; /* Adjust width to fit content */
+    margin: 0 auto;
+    overflow-x: auto; /* Add horizontal scrollbar if needed */
+}
+
+#pro h4 {
+    font-size: 24px; /* Larger font size for heading */
+    margin-bottom: 10px; /* Space between heading and text */
+}
+
+#pro h5 {
+    font-size: 16px; /* Font size for text */
+    margin-bottom: 20px; /* Space between text and graph */
+}
+
+h1 {
+    font-size: 24px; /* Larger font size for progress report */
+    margin-bottom: 10px; /* Space between heading and table */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden; /* Hide table border */
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Light gray border */
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Add hover effect to table rows */
+tr:hover {
+    background-color: #f5f5f5; /* Light gray background on hover */
+    transition: background-color 0.3s ease;
+}
+
+
+/* Container styling */
+#details {
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White text color */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    max-width: 400px;
+    margin: 0 auto;
+    margin-left: 5em;
+      width: 350px;
+    min-height: 200px;
+        box-sizing: border-box;
+    margin-left: 80px;
+}
+
+/* Heading styling */
+
+/* Animation for fading in the text and moving from below to center */
+.animate-text {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.wheel-and-hamster {
+  --dur: 1s;
+  position: relative;
+  width: 12em;
+  height: 12em;
+  font-size: 14px;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+  position: absolute;
+}
+
+.wheel,
+.spoke {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wheel {
+  background: radial-gradient(100% 100% at center,hsla(0,0%,60%,0) 47.8%,hsl(0,0%,60%) 48%);
+  z-index: 2;
+}
+
+.hamster {
+  animation: hamster var(--dur) ease-in-out infinite;
+  top: 50%;
+  left: calc(50% - 3.5em);
+  width: 7em;
+  height: 3.75em;
+  transform: rotate(4deg) translate(-0.8em,1.85em);
+  transform-origin: 50% 0;
+  z-index: 1;
+}
+
+.hamster__head {
+  animation: hamsterHead var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,55%);
+  border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+  box-shadow: 0 -0.25em 0 hsl(30,90%,80%) inset,
+		0.75em -1.55em 0 hsl(30,90%,90%) inset;
+  top: 0;
+  left: -2em;
+  width: 2.75em;
+  height: 2.5em;
+  transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+  animation: hamsterEar var(--dur) ease-in-out infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 50%;
+  box-shadow: -0.25em 0 hsl(30,90%,55%) inset;
+  top: -0.25em;
+  right: -0.25em;
+  width: 0.75em;
+  height: 0.75em;
+  transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+  animation: hamsterEye var(--dur) linear infinite;
+  background-color: hsl(0,0%,0%);
+  border-radius: 50%;
+  top: 0.375em;
+  left: 1.25em;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.hamster__nose {
+  background: hsl(0,90%,75%);
+  border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+  top: 0.75em;
+  left: 0;
+  width: 0.2em;
+  height: 0.25em;
+}
+
+.hamster__body {
+  animation: hamsterBody var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,90%);
+  border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+  box-shadow: 0.1em 0.75em 0 hsl(30,90%,55%) inset,
+		0.15em -0.5em 0 hsl(30,90%,80%) inset;
+  top: 0.25em;
+  left: 2em;
+  width: 4.5em;
+  height: 3em;
+  transform-origin: 17% 50%;
+  transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+  clip-path: polygon(0 0,100% 0,70% 80%,60% 100%,0% 100%,40% 80%);
+  top: 2em;
+  left: 0.5em;
+  width: 1em;
+  height: 1.5em;
+  transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+  animation: hamsterFRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 80%,hsl(0,90%,75%) 80%);
+  transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+  animation: hamsterFLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 80%,hsl(0,90%,85%) 80%);
+  transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+  border-radius: 0.75em 0.75em 0 0;
+  clip-path: polygon(0 0,100% 0,100% 30%,70% 90%,70% 100%,30% 100%,40% 90%,0% 30%);
+  top: 1em;
+  left: 2.8em;
+  width: 1.5em;
+  height: 2.5em;
+  transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+  animation: hamsterBRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 90%,hsl(0,90%,75%) 90%);
+  transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+  animation: hamsterBLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 90%,hsl(0,90%,85%) 90%);
+  transform: rotate(-25deg);
+}
+
+.hamster__tail {
+  animation: hamsterTail var(--dur) linear infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 0.25em 50% 50% 0.25em;
+  box-shadow: 0 -0.2em 0 hsl(0,90%,75%) inset;
+  top: 1.5em;
+  right: -0.5em;
+  width: 1em;
+  height: 0.5em;
+  transform: rotate(30deg) translateZ(-1px);
+  transform-origin: 0.25em 0.25em;
+}
+
+.spoke {
+  animation: spoke var(--dur) linear infinite;
+  background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
+		linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
+}
+
+/* Animations */
+@keyframes hamster {
+  from, to {
+    transform: rotate(4deg) translate(-0.8em,1.85em);
+  }
+
+  50% {
+    transform: rotate(0) translate(-0.8em,1.85em);
+  }
+}
+
+@keyframes hamsterHead {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes hamsterEye {
+  from, 90%, to {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hamsterEar {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes hamsterBody {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes hamsterFRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(50deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-30deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterFLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-30deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes hamsterBRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-60deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(20deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterBLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(20deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hamsterTail {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(30deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(10deg) translateZ(-1px);
+  }
+}
+
+@keyframes spoke {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
+#settings a {
+    text-decoration: none; /* Remove default underline */
+    color: #3498db; /* Set link color */
+    transition: color 0.3s ease; /* Add color transition */
+}
+
+/* Style links on hover */
+#settings a:hover {
+    color: #ff5733; /* Change color on hover */
+    transition: color 0.3s ease; /* Add color transition on hover */
+}
+
+/* Style links for visited pages */
+#settings a:visited {
+    color: #663399; /* Change color for visited links */
+}
+
+/* Add underline animation on hover */
+#settings a.underline-on-hover {
+    position: relative;
+}
+
+#settings a.underline-on-hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Set underline height */
+    bottom: 0;
+    left: 0;
+    background-color: #3498db; /* Set underline color */
+    visibility: hidden;
+    transform: scaleX(0); /* Initial scaleX value */
+    transition: all 0.3s ease; /* Add animation */
+}
+
+#settings a.underline-on-hover:hover::before {
+    visibility: visible;
+    transform: scaleX(1); /* ScaleX to 1 on hover */
+}

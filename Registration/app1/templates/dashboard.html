@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ {% load static %}
+
+<li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/Pull Ups animation.mp4' %}', 'pull-ups');  updateH3Text('Pull Ups','Try to do 3 Pull ups 4 reps <br> 4 X 3 <br> Estimated calorie burn = 10 calories');">
+                    <span style="display: flex; justify-content: space-between; width: 100%;">
+                   <span style="order: 1;">Pull Ups</span>
+ <span style="order: 2; margin-left: auto;">
+      {% if user_videos.video_1 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+  <form id="videoForm1">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="1"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+                    </span>
+                          </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/Lunges.mp4' %}', 'lunges');  updateH3Text('lunges','Try to do 10 lunges 4 reps <br> 10 X 3 <br> Estimated calorie burn = 10 calories');" style="text-decoration: none;">
+                     <span style="display: flex; justify-content: space-between; width: 100%;">
+                      <span style="order: 1;">  Lunges </span>
+                        <span style="order: 2; margin-left: auto;">
+                              {% if user_videos.video_2 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+ <form id="videoForm2">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="2"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+
+                        </span>
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/Legsraises.mp4' %}', 'leg-raises');  updateH3Text('leg-raises','Try to do 8 leg-raises 4 reps <br> 8 X 3 <br> Estimated calorie burn = 10 calories');" style="text-decoration: none;">
+                  <span style="display: flex; justify-content: space-between; width: 100%;">
+                     <span style="order: 1;">   Leg Raises </span>
+                        <span style="order: 2; margin-left: auto;">
+                              {% if user_videos.video_3 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+ <form id="videoForm3">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="3"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/superman.mp4' %}', 'superman');  updateH3Text('Alternating superman','Try to do 7 Alternating superman 3 reps <br> 7 X 3 <br> Estimated calorie burn = 7 calories');" style="text-decoration: none;">
+                   <span style="display: flex; justify-content: space-between; width: 100%;">
+                      <span style="order: 1;">  Alternating superman </span>
+                    <span style="order: 2; margin-left: auto;">
+                          {% if user_videos.video_4 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+  <form id="videoForm4">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="4"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/forward3.mp4' %}', 'forward3');  updateH3Text('FORWARD SPINE STRETCH PULSE','Try to do 12 FORWARD SPINE STRETCH PULSE 3 reps <br> 12 X 3 <br> Estimated calorie burn = 5 calories');" style="text-decoration: none;">
+                       <span style="display: flex; justify-content: space-between; width: 100%;">
+                      <span style="order: 1;">  FORWARD SPINE STRETCH PULSE </span>
+                          <span style="order: 2; margin-left: auto;">
+                                {% if user_videos.video_5 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+                              <form id="videoForm5">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="5"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+</span>
+
+                        </span>
+
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/jumping.mp4' %}', 'jumping-jacks');  updateH3Text('jumping-jacks','Try to do 15 jumping-jacks ups 3 reps <br> 15 X 3 <br> Estimated calorie burn = 30 calories');" style="text-decoration: none;">
+                        <span style="display: flex; justify-content: space-between; width: 100%;">
+                       <span style="order: 1;"> Jumping Jacks </span>
+                           <span style="order: 2; margin-left: auto;">
+  {% if user_videos.video_6 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+            <form id="videoForm6">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="6"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/incline.mp4' %}', 'incline-pushups');  updateH3Text('incline-pushups','Try to do 5 incline-pushups 3 reps <br> 5 X 3 <br> Estimated calorie burn = 10 calories');" style="text-decoration: none;">
+                 <span style="display: flex; justify-content: space-between; width: 100%;">
+    <span style="order: 1;">Incline PushUps</span>
+    <span style="order: 2; margin-left: auto;">
+          {% if user_videos.video_7 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+<form id="videoForm7">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="7"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+
+
+                        </span>
+</span>
+
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/knee.mp4' %}', 'knee-pushups');  updateH3Text('knee-pushups','Try to do 5 knee-pushups 3 reps <br> 5 X 3 <br> Estimated calorie burn = 10 calories');" style="text-decoration: none;">
+                     <span style="display: flex; justify-content: space-between; width: 100%;">
+                 <span style="order: 1;">       Knee Push Ups  </span>
+                       <span style="order: 2; margin-left: auto;">
+                             {% if user_videos.video_8 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+<form id="videoForm8">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="8"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/cobra2.mp4' %}', 'cobra-stretch');  updateH3Text('cobra-stretch','Try to do 5 cobra-stretch 2 reps <br> 5 X 2 <br> Estimated calorie burn = 10 calories');" style="text-decoration: none;">
+                  <span style="display: flex; justify-content: space-between; width: 100%;">
+                      <span style="order: 1;">  Cobra Stretch </span>
+                     <span style="order: 2; margin-left: auto;">
+                           {% if user_videos.video_9 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+  <form id="videoForm9">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="9"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="playVideo('{% static 'dashboard/ankle.mp4' %}', 'ankle-plantar-flexion');  updateH3Text('Ankle Plantar Flexion','Try to do 7 Ankle Plantar Flexion 3 reps <br> 7 X 3 <br> Estimated calorie burn = 10 calories');" style="text-decoration: none;">
+                        <span style="display: flex; justify-content: space-between; width: 100%;">
+                 <span style="order: 1;">       Ankle Plantar Flexion </span>
+                  <span style="order: 2; margin-left: auto;">
+  {% if user_videos.video_10 %}
+                    <!-- Video 1 is marked as done, so don't display the button -->
+                {% else %}
+<form id="videoForm10">
+    {% csrf_token %}
+    <input type="hidden" name="video_id" value="10"> <!-- Replace with the actual video ID -->
+    <button type="submit">Mark as Done</button>
+</form>
+ {% endif %}
+                        </span>
+                    </span>
+                </a>
+            </li>
+
+
+<script>
+    // JavaScript code to handle form submissions
+    document.addEventListener('DOMContentLoaded', function() {
+        // Attach a submit event listener to each video form
+        document.querySelectorAll('form').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                // Get the form data
+                const formData = new FormData(form);
+
+                // Create a new XMLHttpRequest object
+                const xhr = new XMLHttpRequest();
+
+                // Configure the request
+                xhr.open('POST', '/mark_video_as_done/');
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // Indicate AJAX request
+                xhr.setRequestHeader('X-CSRFToken', getCSRFToken()); // Include the CSRF token
+
+                // Define the callback function when the request is complete
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // Success
+                        alert('Video marked as done!');
+                    } else {
+                        // Error
+                        alert('Failed to mark video as done.');
+                    }
+                };
+
+                // Send the request
+                xhr.send(formData);
+            });
+        });
+
+        // Function to retrieve the CSRF token from cookies
+        function getCSRFToken() {
+            const name = 'csrftoken=';
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookieArray = decodedCookie.split(';');
+
+            for (let i = 0; i < cookieArray.length; i++) {
+                let cookie = cookieArray[i].trim();
+                if (cookie.indexOf(name) === 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            return null;
+        }
+    });
+</script>
+
+{% endblock %}

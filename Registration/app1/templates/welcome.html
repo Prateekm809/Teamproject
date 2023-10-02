@@ -1,0 +1,389 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duo Studio — A Creative Digital Agency in Washington DC</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="{% static 'files/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.4/tailwind.min.css">
+<style>
+    .page2-right{
+    /* background-color: blue; */
+    width: 30%;
+
+}
+    .parent {
+  width: 400px;
+
+  perspective: 1000px;
+}
+
+.card {
+  padding-top: 50px;
+  /* border-radius: 10px; */
+  border: 3px solid rgb(255, 255, 255);
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0),
+      repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.content-box {
+  background: rgba(4, 193, 250, 0.732);
+  /* border-radius: 10px 100px 10px 10px; */
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+
+.content-box .card-title {
+  display: inline-block;
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f2f2f2;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgb(7, 185, 255);
+  /* border-radius: 5px; */
+  background: white;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.date-box {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background-image: url('https://www.golighthouse.com/en/wp-content/uploads/2022/08/b_about_the_ceo.jpg');
+  border: 1px solid rgb(7, 185, 255);
+  /* border-radius: 10px; */
+  padding: 10px;
+   background-size: cover;
+  background-repeat: no-repeat;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+
+.date-box span {
+  display: block;
+  text-align: center;
+}
+.date-box1 span {
+  display: block;
+  text-align: center;
+}
+
+.date-box .month img{
+  color: rgb(4, 193, 250);
+  font-size: 9px;
+  font-weight: 700;
+  height:3vh
+
+}
+
+.date-box .date {
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(4, 193, 250);
+}
+    .btn2 {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn2::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - -2px);
+  background-color: #000;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.btn2::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 50px);
+  background-color: #212121;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.btn2:hover::before {
+  transform: translateY(-25px);
+  height: 0;
+}
+
+.btn2:hover::after {
+  transform: scaleX(0);
+  transition-delay: 0.15s;
+}
+
+.btn2:hover {
+  border: 2px solid #fefefe;
+}
+
+.btn2 span {
+  position: relative;
+  z-index: 3;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+ </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div id="nav">
+        <img src="{% static 'Assests/logo4.svg' %}"
+            alt="" style="background-color:'black'">
+        <div id="nav-part2">
+            <h4><button>
+  <a href="#" class="btn2"><span class="spn2">Home</span></a>
+</button></h4>
+            <h4 onclick="redirectToDashboard()" ><button>
+  <a href="#" class="btn2"><span class="spn2">Dashboard</span></a>
+</button></h4>
+
+        </div>
+        <div id="nav-part3">
+            <div id="circle"></div>
+        </div>
+    </div>
+    <div id="purple">
+
+    </div>
+    <div class="main">
+        <div class="page1" id="page1">
+
+            <h1>Pursue Dreams</h1>
+            <h2>Create Tomorrow</h2>
+
+
+            <video autoplay muted loop src="{% static 'files/judofight2.mp4' %}"></video>
+        </div>
+        <div class="page2">
+            <h1>Meaning of "Taekwondo"</h1>
+            <div class="page2-container">
+                <div class="page2-left">
+                    <h2>The word "Taekwondo" can be broken down as follows:<br>
+                        1.Tae (태): Represents foot techniques, including kicks and strikes with the feet.<br>
+                        2.Kwon (권): Represents hand techniques, including punches and strikes with the hands.<br>
+                        3.Do (도): Means "the way" or "the path." It signifies the martial art's philosophical and moral aspects.
+                        </h2>
+                </div>
+                <div class="page2-right">
+                    <p>From a legendary Taekwondo player </p>
+                    <div class="parent">
+  <div class="card">
+      <div class="content-box">
+          <span class="card-title">— Grandmaster Dr. Tae Yun Kim</span>
+          <p class="card-content">
+              "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful."
+          </p>
+          <span class="see-more" id="see">See More</span>
+      </div>
+      <div class="date-box">
+
+      </div>
+  </div>
+</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page3">
+            <h1>Five Tenets of Taekwondo:</h1>
+<h2>1.Courtesy (예의, Ye-ui): <br>
+    Definition: Courtesy in Taekwondo refers to showing respect, politeness, and consideration toward others.<br>
+Practical Application: Taekwondo practitioners are taught to bow to instructors and fellow students as a sign of respect. This tenet emphasizes the importance of humility and treating others with kindness. <br><br>
+    2.Integrity (염치, Yeomchi): <br>
+    Definition: Integrity means being honest, truthful, and morally upright in all actions and decisions.<br>
+Practical Application: Taekwondo students are encouraged to maintain honesty both on and off the training mat. This tenet instills a sense of ethics and moral character.<br><br>
+    3.Perseverance (인내, Innai):<br>
+    Definition: Perseverance involves maintaining determination, resilience, and patience in the face of challenges and obstacles. <br>
+Practical Application: Taekwondo teaches students to never give up, even when facing difficulties during training or in life. This tenet fosters mental strength and determination.<br><br>
+    4.Self-Control (극기, Geukgi): <br>
+    Definition: Self-control means having discipline over one's actions, emotions, and impulses. <br>
+Practical Application: Taekwondo emphasizes the importance of controlling one's temper and avoiding aggression. Practitioners learn to harness their energy and focus it on productive goals. <br><br>
+    5.Indomitable Spirit (백절불굴, Baekjeol Bulgul): <br>
+    Definition: Indomitable spirit is the unwavering determination to overcome challenges and never be defeated. <br>
+Practical Application: Taekwondo encourages a strong will and the belief that no obstacle is insurmountable. This tenet inspires students to face adversity with courage. <br><br>
+
+
+
+
+
+</h2>
+        </div>
+        <div class="page4">
+            <div class="elem">
+                <img src="https://img.freepik.com/free-photo/low-angle-people-practicing-taekwondo_23-2150260469.jpg?size=626&ext=jpg"
+                    alt="">
+                <div class="text-div">
+                    <h1>Beginner</h1>
+                    <h1>Beginner</h1>
+                </div>
+                <img src="https://img.freepik.com/free-photo/front-view-woman-practicing-taekwondo_23-2150260486.jpg?size=626&ext=jpg&ga=GA1.2.722028033.1694535648&semt=ais"
+                    alt="">
+            </div>
+            <div class="elem">
+                <img src="https://img.freepik.com/premium-photo/couple-practicing-martial-arts-top-mountain-generative-ai_212944-27653.jpg?size=626&ext=jpg&ga=GA1.2.722028033.1694535648&semt=ais"
+                    alt="">
+                <div class="text-div">
+                    <h1>Intermediate</h1>
+                    <h1>Intermediate</h1>
+                </div>
+                <img src="https://img.freepik.com/free-photo/active-training-professional-female-judoist-white-judo-kimono-practicing-training-isolated-blue-neoned-studio-background_155003-24254.jpg?size=626&ext=jpg"
+                    alt="">
+            </div>
+            <div class="elem">
+                <img src="https://img.freepik.com/premium-photo/dynamic-martial-artist-action-pose-generative-ai_742252-18400.jpg?size=626&ext=jpg&ga=GA1.2.722028033.1694535648&semt=ais"
+                    alt="">
+                <div class="text-div">
+                    <h1>Advance</h1>
+                    <h1>Advance</h1>
+                </div>
+                <img src="https://img.freepik.com/premium-photo/karate-fight-top-view-martial-arts-sports-competiotion-personal-trainer-coach-mma-fighting-workout-taekwondo-training-fitness-exercise-teacher-wrestling-challenge-gym-floor_590464-111938.jpg?size=626&ext=jpg&ga=GA1.2.722028033.1694535648&semt=ais"
+                    alt="">
+            </div>
+
+        </div>
+        <div class="page5">
+            <h2>having any Problem contacts us</h2>
+
+
+
+    <div class="flex items-center min-h-screen bg-gray-900" style="background-color: inherit;">
+        <div class="container mx-auto">
+          <div class="max-w-md mx-auto my-10 bg-gray-800 p-5 rounded-md shadow-sm" style="background-color: inherit;">
+            <div class="text-center">
+              <h1 class="my-3 text-3xl font-semibold text-gray-100">
+                Contact Us
+              </h1>
+              <p class="text-gray-400 dark:text-gray-400">
+                Fill up the form below to send us a message.
+              </p>
+            </div>
+            <div class="m-7">
+              <form action="https://api.web3forms.com/submit" method="POST" id="form" class="p-5 rounded-md" style="background-color: inherit;">
+                <input type="hidden" name="access_key" value="47447090-d500-4235-9eca-6e6c4bfbea86" />
+                <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                <input type="checkbox" name="botcheck" id="" style="display: none;" />
+
+                <div class="mb-6">
+                  <label for="name" class="block mb-2 text-sm text-gray-400">Full Name</label>
+                  <input type="text" name="name" id="name" placeholder="Your name" required class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
+                </div>
+                <div class="mb-6">
+                  <label for="email" class="block mb-2 text-sm text-gray-400">Email Address</label>
+                  <input type="email" name="email" id="email" placeholder="your email" required class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
+                </div>
+                <div class="mb-6">
+                  <label for="phone" class="block mb-2 text-sm text-gray-400">Phone Number</label>
+                  <input type="text" name="phone" id="phone" placeholder="enter your Phone" required class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
+                </div>
+                <div class="mb-6">
+                  <label for="message" class="block mb-2 text-sm text-gray-400">Your Message</label>
+                  <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" required></textarea>
+                </div>
+                <div class="mb-6">
+                  <button type="submit" class="w-full bg-indigo-600 inline-block text-white no-underline hover:text-indigo-100 py-4 px-4 rounded-sm focus:outline-none">
+                    Send Message
+                  </button>
+                </div>
+                <p class="text-base text-center text-gray-400" id="result"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'files/script.js' %}"></script>
+<script>
+     document.getElementById("see").addEventListener("click", function () {
+    window.location.href = "https://taekwondo.fandom.com/wiki/Tae_Yun_Kim";
+  });
+       function redirectToDashboard() {
+            window.location.href = "{% url 'dashboard' %}";
+        }
+</script>
+</body>
+
+</html>

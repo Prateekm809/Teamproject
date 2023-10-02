@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Step 1: Height</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Step 1: Height</h2>
+    <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="{{ form.height.id_for_label }}">Height (cm):</label>
+        {{ form.height }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.weight.id_for_label }}">Weight (kg):</label>
+        {{ form.weight }}
+    </div>
+    <input type="submit" value="Next">
+</form>
+
+</body>
+</html>
